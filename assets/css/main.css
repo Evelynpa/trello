@@ -1,0 +1,71 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+/*MENU PRINCIPAL HEADER *********************/
+.containerHeader{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #026AA7;
+}
+.containerHeader ul{
+	margin: 0;
+	padding:0px 0px 15px 10px;
+}
+.containerHeader li{
+	display: inline-block;
+	color: #fff;
+	font-size: 18px;
+}
+.tercer{
+	width: 950px;
+	text-align: center;
+}
+.imgLogo{
+	position: relative;	
+	top: 10px;
+}
+.containerHeader li span{
+	background-color: rgba(0, 202, 255, 0.3);
+	padding: 5px;
+	border-radius: 7px;
+}
+.containerHeader li:first-child{
+	width: 100px;
+}
+.containerHeader .one .fa{
+	margin-right: 10px;
+}
+.containerHeader .two{
+	width: 150px;
+}
+ .campoHeader{
+	width: 110px;
+	background-color: rgba(0, 202, 255, 0.0);
+	border:none;
+ }
+  .campoHeader:focus{
+  	outline: none;
+  }
+ .fa-plus, .fa-info-circle, .fa-bell-o, .fa-user-o{
+ 	padding-top: 5px;
+ 	font-size: 20px;
+ }
+
+ /*MENU SECUNDARIO NAV *********************/
+ nav{
+ 	width: 100%;
+	position: fixed;
+	top: 50px;
+	background-color: #0291e3;
+ }
+ nav li{
+ 	display: inline-block;
+ }
+
+ /*CONTENEDOR CREADO IZQUERDO***********************/
+
+ #containerLeft{
+ 	margin-top: 150px;
+ }
