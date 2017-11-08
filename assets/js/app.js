@@ -1,6 +1,11 @@
+//crear seccion
+var sectionContainer = document.createElement('section');
+	sectionContainer.setAttribute('id', 'containerLeft');
+	document.body.appendChild(sectionContainer);
+
 //crear span
 var spanText = document.createElement('span');
-	var textSpan = document.createTextNode('Añadir una lista');
+	var textSpan = document.createTextNode('Añadir una lista...');
 		spanText.appendChild(textSpan);
 	spanText.setAttribute('id', 'botonClick');//id
 	containerLeft.appendChild(spanText);
@@ -60,7 +65,9 @@ function guardarList(){
 	var textValue = document.getElementById('campoList').value;
 
 	document.getElementById('campoList').value = "";
-
+if(textValue === ''){
+	alert('ingrese algo')
+}else{
 	//crear div
 	var articleContainerLeft = document.createElement('div');
 		articleContainerLeft.setAttribute('id', 'containerCampoLeft');//id
@@ -77,7 +84,7 @@ function guardarList(){
 
 	//crear nuevo elemento
 	var linkNewTarget = document.createElement('a');
-	var textTarget = document.createTextNode('Añadir una targeta');
+	var textTarget = document.createTextNode('Añadir una targeta...');
 		linkNewTarget.appendChild(textTarget);
 		linkNewTarget.setAttribute('id', 'linkTarget');//id
 		linkNewTarget.setAttribute('href', '#');
@@ -104,15 +111,15 @@ function guardarList(){
 	articleContainerLeft.appendChild(buttonLeft);
 	articleContainerLeft.appendChild(closeI);
 	containerLeft.insertBefore(articleContainerLeft ,articleContainer);
-
+}
 	closeI.addEventListener('click',function(){
 				textArea.style.display = 'none';
 				buttonLeft.style.display = 'none';
 				closeI.style.display = 'none';
-				linkNewTarget.style.display = 'inline-block';
+				linkNewTarget.style.display = 'block';
 		});
 	linkNewTarget.addEventListener('click',function(){
-				textArea.style.display = 'inline-block';
+				textArea.style.display = 'block';
 				buttonLeft.style.display = 'inline-block';
 				closeI.style.display = 'inline-block';
 				linkNewTarget.style.display = 'none';
@@ -123,13 +130,4 @@ function guardarList(){
 		});
 
 }
-
-//funcion campo vacio
-/*function validate(word){
-	if(word.length == 0){
-		alert('ingrese campo');
-	}else {
-		
-	}
-}*/
 
