@@ -21,7 +21,7 @@ body{
 	font-size: 18px;
 }
 .tercer{
-	width: 950px;
+	width: 900px;
 	text-align: center;
 }
 .imgLogo{
@@ -34,7 +34,7 @@ body{
 	border-radius: 7px;
 }
 .containerHeader li:first-child{
-	width: 100px;
+	width: 120px;
 }
 .containerHeader .one .fa{
 	margin-right: 10px;
@@ -70,7 +70,7 @@ body{
  /*CONTENEDOR CREADO IZQUERDO***********************/
 
  #containerLeft{
- 	display: inline-block;
+ 	/*display: inline-block;*/
  	margin-top: 150px;
  	margin-left: 10px;
 
@@ -106,7 +106,7 @@ body{
 #campoList:focus{
 	outline: none;
 }
-#guardar{
+.botones{
 	background-color: #03a1fc;
 	color: #fff;
 	padding: 10px;
@@ -119,7 +119,7 @@ body{
 -moz-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 }
-#guardar:hover{
+.botones:hover{
 	background-color: #0291e3;
 	transition: .3s;
 }
@@ -128,7 +128,7 @@ box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 	padding: 0 5px 0 10px;
 	text-align: center;
 	cursor: pointer;
-	color: #4d4d4d
+	color: #4d4d4d;
 }
 .fa-times:hover{
 	color: #262626;
@@ -139,7 +139,8 @@ box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 }
 /* cuadro co texarea*/
 #containerCampoLeft{
-	padding: 2px;
+	width:15%;
+	padding: 10px;
 	background-color: #bfbfbf;
 	display: inline-block;
 	border-radius: 5px;
@@ -151,10 +152,34 @@ box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 }
 #linkTarget{
 	display: block;
-	padding: 10px 50px 10px 10px;
+	padding: 10px 40px 10px 10px;
 	text-decoration: none;
 	color: #595959
 }
-#campoListArea{
+.texareaList{
 	display: block;
+	border-radius: 5px;
+}
+#guardarLeft{
+}
+#campoArea{
+	display: block;
+}
+#contenedor{
+	width: 100%;
+}
+#campoListArea{
+	width: 97%;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+}
+#campoArea{
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+border-radius: 5px;
+margin-bottom: 5px;
 }

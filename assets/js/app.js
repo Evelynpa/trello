@@ -34,6 +34,7 @@ function createList(){
 	//añadir atributo y texto a boton
 	buttonList.appendChild(textButton);
 	buttonList.setAttribute('id', 'guardar');//id
+	buttonList.classList.add('botones');//class
 
 	//añadir cada elemento creado
 	articleContainer.appendChild(inputText);
@@ -68,8 +69,8 @@ function guardarList(){
 if(textValue === ''){
 	alert('ingrese algo')
 }else{
-	//crear div
-	var articleContainerLeft = document.createElement('div');
+	//crear contenedor
+	var articleContainerLeft = document.createElement('article');
 		articleContainerLeft.setAttribute('id', 'containerCampoLeft');//id
 
 	//crear label para el valor del input
@@ -78,9 +79,14 @@ if(textValue === ''){
 	var nodeText = document.createTextNode(textValue);
 		labelText.appendChild(nodeText);
 
+	//crear div
+	var contenedor = document.createElement('div');
+		contenedor.setAttribute('id', 'contenedor');//id
+
 	//crear un texarea
 	var textArea = document.createElement('textarea');
 		textArea.setAttribute('id', 'campoListArea');//id
+		textArea.setAttribute('class', 'texareaList');//class
 
 	//crear nuevo elemento
 	var linkNewTarget = document.createElement('a');
@@ -93,40 +99,51 @@ if(textValue === ''){
 	var buttonLeft = document.createElement('button');
 	var buttonText = document.createTextNode('Añadir');
 		buttonLeft.appendChild(buttonText);
-		buttonLeft.setAttribute('id', 'guardar');//id
+		buttonLeft.setAttribute('id', 'guardarLeft');//id
+		buttonLeft.classList.add('botones');//class
 
 	//crear icono cerrar
 	var closeI = document.createElement('i');
 		closeI.classList.add('fa','fa-times');//class
 
 	//elementos ocultos
-	textArea.style.display = 'none';
-	buttonLeft.style.display = 'none';
-	closeI.style.display = 'none';
+	contenedor.style.display = 'none';
 
 	//añadir cada elemento creado
+	
 	articleContainerLeft.appendChild(labelText);
-	articleContainerLeft.appendChild(textArea);
+	articleContainerLeft.appendChild(contenedor);
+	contenedor.appendChild(textArea);
 	articleContainerLeft.appendChild(linkNewTarget);
-	articleContainerLeft.appendChild(buttonLeft);
-	articleContainerLeft.appendChild(closeI);
+	contenedor.appendChild(buttonLeft);
+	contenedor.appendChild(closeI);
 	containerLeft.insertBefore(articleContainerLeft ,articleContainer);
 }
+	
 	closeI.addEventListener('click',function(){
-				textArea.style.display = 'none';
-				buttonLeft.style.display = 'none';
-				closeI.style.display = 'none';
+				contenedor.style.display = 'none';
 				linkNewTarget.style.display = 'block';
 		});
 	linkNewTarget.addEventListener('click',function(){
-				textArea.style.display = 'block';
-				buttonLeft.style.display = 'inline-block';
-				closeI.style.display = 'inline-block';
+				contenedor.style.display = 'block';
 				linkNewTarget.style.display = 'none';
 		});
 	buttonLeft.addEventListener('click',function(){
-				var textArea = document.createElement('textarea');
-				articleContainerLeft.insertBefore(textArea, buttonLeft);
+				var areaValue = document.getElementById('campoListArea').value;
+				document.getElementById('campoListArea').value = '';
+				if(areaValue === ''){
+					alert('ingrese targeta')
+				}else {
+					
+				//crear label para el valor del textarea
+				var labelText = document.createElement('label');
+					labelText.setAttribute('id', 'campoArea');//id
+				var nodeText = document.createTextNode(areaValue);
+					labelText.appendChild(nodeText);
+
+				articleContainerLeft.insertBefore(labelText, contenedor);
+			}
+
 		});
 
 }
