@@ -1,94 +1,135 @@
-//crear nuevo elemento
-	var articleContainer = document.createElement('article');
-	//crear input
-	var inputText = document.createElement('input');
+//crear span
+var spanText = document.createElement('span');
+	var textSpan = document.createTextNode('Añadir una lista');
+		spanText.appendChild(textSpan);
+	spanText.setAttribute('id', 'botonClick');//id
+	containerLeft.appendChild(spanText);
+
+//crear input
+var inputText = document.createElement('input');
 	inputText.setAttribute('placeholder', 'Añadir una lista...');
+	inputText.setAttribute('id', 'campoList');//id
+
+//crear boton
+	var buttonList = document.createElement('button');
+	var textButton = document.createTextNode('Guardar');
+
+//crear elemento i
+var closeI = document.createElement('i');
+	closeI.classList.add('fa','fa-times');//class
+	
+	//crear nuevo elemento
+	var articleContainer = document.createElement('article');
+
+function createList(){
+
+	//añadir id a elemento
+	articleContainer.setAttribute('id', 'containerCampo');//id	
+
+	//añadir atributo y texto a boton
+	buttonList.appendChild(textButton);
+	buttonList.setAttribute('id', 'guardar');//id
+
+	//añadir cada elemento creado
+	articleContainer.appendChild(inputText);
+	articleContainer.appendChild(buttonList);
+	articleContainer.appendChild(closeI);
+	containerLeft.appendChild(articleContainer);
+
+	spanButton.style.display = 'none';
+
+	buttonList.addEventListener('click', guardarList);
+
+	spanButton.addEventListener('click',function(){
+			articleContainer.style.display = 'inline-block';
+			spanText.style.display = 'none';
+	});
+
+	closeI.addEventListener('click',function(){
+			articleContainer.style.display = 'none';
+			spanText.style.display = 'inline-block';
+	});
+}
+
+var spanButton = document.getElementById('botonClick');
+spanButton.addEventListener('click', createList);
+
+
+//PRESIONAR BOTON GUARDAR
+function guardarList(){
+	var textValue = document.getElementById('campoList').value;
+
+	document.getElementById('campoList').value = "";
+
+	//crear div
+	var articleContainerLeft = document.createElement('div');
+		articleContainerLeft.setAttribute('id', 'containerCampoLeft');//id
+
+	//crear label para el valor del input
+	var labelText = document.createElement('label');
+		labelText.setAttribute('id', 'campoListLeft');//id
+	var nodeText = document.createTextNode(textValue);
+		labelText.appendChild(nodeText);
+
+	//crear un texarea
+	var textArea = document.createElement('textarea');
+		textArea.setAttribute('id', 'campoListArea');//id
 
 	//crear nuevo elemento
 	var linkNewTarget = document.createElement('a');
 	var textTarget = document.createTextNode('Añadir una targeta');
-	linkNewTarget.appendChild(textTarget);
-
-	//crear boton
-	var buttonList = document.createElement('button');
-		var textButton = document.createTextNode('Guardar');
-		buttonList.appendChild(textButton);
-
-	//crear elemento i
-	var closeI = document.createElement('i');
-
-
-function createList(){
-	//var text = document.getElementById('textCreateList').value;
-
-		articleContainer.setAttribute('id', 'containerCampo');//id
-
-		inputText.setAttribute('id', 'campoList');//id
-		
+		linkNewTarget.appendChild(textTarget);
 		linkNewTarget.setAttribute('id', 'linkTarget');//id
+		linkNewTarget.setAttribute('href', '#');
 
-		buttonList.setAttribute('id', 'guardar');//id
+	//crear boton añadir
+	var buttonLeft = document.createElement('button');
+	var buttonText = document.createTextNode('Añadir');
+		buttonLeft.appendChild(buttonText);
+		buttonLeft.setAttribute('id', 'guardar');//id
 
-		closeI.classList.add('fa','fa-times');//class
-
-
-	//añadir cada elemento creado
-	articleContainer.appendChild(inputText);
-	articleContainer.appendChild(linkNewTarget);
-	articleContainer.appendChild(buttonList);
-	articleContainer.appendChild(closeI);
-
-	containerLeft.appendChild(articleContainer);
-
-	//esconder span
-	spanButton.style.display = 'none';
-
-	//esconder a
-	linkNewTarget.style.display = 'none';
-
-
-	buttonList.addEventListener('click',function(){
-			buttonList.style.display = 'none';
-			linkNewTarget.style.display = 'inline-block';
-	});
-}
-var spanButton = document.getElementById('botonClick');
-spanButton.addEventListener('click', createList);
-
-//PRESIONAR BOTON GUARDAR
-/*function guardarList(){
-
-	//obtener valor de campo
-	var valorTextList = document.getElementById('campoList').value;
-
-	//crear nuevo elemento
-	var articleContainerRigth = document.createElement('article');
-		articleContainerRigth.setAttribute('id', 'containerCampoRigth');//id
-
-	//crear input
-	var inputText = document.createElement('input');
-		inputText.setAttribute('id', 'campoListRigth');//id
-		inputText.setAttribute('placeholder', 'Añadir una lista...');
-
-	//crear boton
-	var buttonListRigth = document.createElement('button');
-		buttonListRigth.setAttribute('id', 'guardarRigth');//id
-	var textButton = document.createTextNode('Guardar');
-	buttonListRigth.appendChild(textButton);
-
-	//crear elemento i
+	//crear icono cerrar
 	var closeI = document.createElement('i');
 		closeI.classList.add('fa','fa-times');//class
 
-	//añadir cada elemento creado
-	articleContainerRigth.appendChild(inputText);
-	articleContainerRigth.appendChild(buttonListRigth);
-	articleContainerRigth.appendChild(closeI);
-	containerLeft.appendChild(articleContainerRigth);
+	//elementos ocultos
+	textArea.style.display = 'none';
+	buttonLeft.style.display = 'none';
+	closeI.style.display = 'none';
 
-	buttonList.style.display = 'none';
-	linkNewTarget.style.display = 'inline-block';
-	//agregar 'a' al containerCampo 
-	//articleContainer.appendChild(linkNewTarget);
+	//añadir cada elemento creado
+	articleContainerLeft.appendChild(labelText);
+	articleContainerLeft.appendChild(textArea);
+	articleContainerLeft.appendChild(linkNewTarget);
+	articleContainerLeft.appendChild(buttonLeft);
+	articleContainerLeft.appendChild(closeI);
+	containerLeft.insertBefore(articleContainerLeft ,articleContainer);
+
+	closeI.addEventListener('click',function(){
+				textArea.style.display = 'none';
+				buttonLeft.style.display = 'none';
+				closeI.style.display = 'none';
+				linkNewTarget.style.display = 'inline-block';
+		});
+	linkNewTarget.addEventListener('click',function(){
+				textArea.style.display = 'inline-block';
+				buttonLeft.style.display = 'inline-block';
+				closeI.style.display = 'inline-block';
+				linkNewTarget.style.display = 'none';
+		});
+	buttonLeft.addEventListener('click',function(){
+				var textArea = document.createElement('textarea');
+				articleContainerLeft.insertBefore(textArea, buttonLeft);
+		});
+
+}
+
+//funcion campo vacio
+/*function validate(word){
+	if(word.length == 0){
+		alert('ingrese campo');
+	}else {
+		
+	}
 }*/
 
