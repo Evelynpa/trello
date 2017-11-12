@@ -10,6 +10,9 @@ body{
 	position: fixed;
 	top: 0;
 	background-color: #026AA7;
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
 }
 .containerHeader ul{
 	margin: 0;
@@ -29,7 +32,7 @@ body{
 	top: 10px;
 }
 .containerHeader li span{
-	background-color: rgba(0, 202, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.3);
 	padding: 5px;
 	border-radius: 7px;
 }
@@ -61,11 +64,87 @@ body{
 	position: fixed;
 	top: 50px;
 	background-color: #0291e3;
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.75);
  }
  nav li{
  	display: inline-block;
  	color: #fff;
+ 	padding: 0 20px;
  }
+  nav ul li:first-child{
+  	font-weight: bold;
+  }
+  .fa-star-o{
+  	padding-right: 10px;
+  	border-right: 1px solid  #fff;
+  }
+  .fa-lock, .fa-ellipsis-h{
+  	padding-right: 5px;
+  }
+  .verde{
+  	background-color: #00b300;
+  	padding: 5px 30px;
+  	margin-left: 50px;
+  	border-radius: 5px;
+  	cursor: pointer;
+  	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+  }
+  .purple{
+	background-color: #cc0099;
+	padding: 5px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+  }
+  .amarillo{
+	background-color: #ffb900;
+	padding: 5px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+  }
+  .rojo{
+	background-color: #e60000;
+	padding: 5px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+  }
+  .azul{
+	background-color: #026AA7;
+	padding: 5px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 50px;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+  }
+  .verde:hover{
+	background-color: #008000;
+  }
+  .purple:hover{
+  	background-color: #990073;
+  }
+  .amarillo:hover{
+  	background-color: #e6b800;
+  }
+  .rojo:hover{
+  	background-color: #b30000;
+  }
+  .azul:hover{
+  	background-color: #02507e;
+  }
 
  /*CONTENEDOR CREADO IZQUERDO***********************/
 
@@ -78,27 +157,27 @@ body{
  }
  #botonClick{
  	padding: 10px 100px 10px 10px;
- 	background-color: rgba(7, 157, 184, 0.5);
+ 	background-color: rgba(0, 0, 0, 0.3);
  	border-radius: 5px;
  	color: #fff;
  	cursor: pointer;
  }
   #botonClick:hover{
-  	background-color: rgba(7, 157, 184, 0.9);
+  	background-color: rgba(0, 0, 0, 0.5);
   	transition: .2s;
   }
 #containerCampo{
 	padding: 2px;
-	background-color: #bfbfbf;
+	background-color: rgba(255, 255, 255, 0.4);
 	display: inline-block;
 	border-radius: 5px;
 }
 #campoList{
 	padding: 10px;
 	border: 1px solid #808080;
-	-webkit-box-shadow: inset 0px 0px 21px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: inset 0px 0px 21px 0px rgba(0,0,0,0.75);
-	box-shadow: inset 0px 0px 21px 0px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
 	display: block;
 	margin: 5px;
 	border-radius: 5px;s
@@ -107,8 +186,8 @@ body{
 	outline: none;
 }
 .botones{
-	background-color: #03a1fc;
-	color: #fff;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #000;
 	padding: 10px;
 	border: none;
 	margin: 5px;
@@ -116,11 +195,11 @@ body{
 	font-size: 15px;
 	cursor: pointer;
 	-webkit-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 }
 .botones:hover{
-	background-color: #0291e3;
+	background-color: rgba(255, 255, 255, 0.4);
 	transition: .3s;
 }
 .fa-times{
@@ -133,22 +212,20 @@ box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.75);
 .fa-times:hover{
 	color: #262626;
 }
-#containerCampoLeft{
-	float: left;
-
-}
 /* cuadro co texarea*/
 #containerCampoLeft{
 	width:15%;
 	padding: 10px;
-	background-color: #bfbfbf;
+	background-color: rgba(255, 255, 255, 0.4);
 	display: inline-block;
 	border-radius: 5px;
 	margin-right: 10px;
+	float: left;
 }
 #campoListLeft{
 	display: block;
 	padding: 10px;
+	font-weight: bold;
 }
 #linkTarget{
 	display: block;
@@ -176,10 +253,13 @@ box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
 }
 #campoArea{
 	padding: 5px;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.9);
 	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
 box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
 border-radius: 5px;
 margin-bottom: 5px;
+}
+#campoArea:hover{
+	background-color: rgba(255, 255, 255, 0.3);
 }

@@ -17,6 +17,8 @@ var inputText = document.createElement('input');
 
 //crear boton
 	var buttonList = document.createElement('button');
+	buttonList.setAttribute('id', 'guardar');//id
+	buttonList.classList.add('botones');//class
 	var textButton = document.createTextNode('Guardar');
 
 //crear elemento i
@@ -33,8 +35,7 @@ function createList(){
 
 	//añadir atributo y texto a boton
 	buttonList.appendChild(textButton);
-	buttonList.setAttribute('id', 'guardar');//id
-	buttonList.classList.add('botones');//class
+	
 
 	//añadir cada elemento creado
 	articleContainer.appendChild(inputText);
@@ -67,8 +68,9 @@ function guardarList(){
 
 	document.getElementById('campoList').value = "";
 if(textValue === ''){
-	alert('ingrese algo')
+	inputText.style.border = '2px solid red';
 }else{
+	inputText.style.border = '1px solid #808080';
 	//crear contenedor
 	var articleContainerLeft = document.createElement('article');
 		articleContainerLeft.setAttribute('id', 'containerCampoLeft');//id
@@ -86,7 +88,8 @@ if(textValue === ''){
 	//crear un texarea
 	var textArea = document.createElement('textarea');
 		textArea.setAttribute('id', 'campoListArea');//id
-		textArea.setAttribute('class', 'texareaList');//class
+		textArea.classList.add('texareaList');//class
+		document.getElementsByTagName('textarea');
 
 	//crear nuevo elemento
 	var linkNewTarget = document.createElement('a');
@@ -132,9 +135,9 @@ if(textValue === ''){
 				var areaValue = document.getElementById('campoListArea').value;
 				document.getElementById('campoListArea').value = '';
 				if(areaValue === ''){
-					alert('ingrese targeta')
+					textArea.style.border = '2px solid red';
 				}else {
-					
+					textArea.style.border = '1px solid #808080';
 				//crear label para el valor del textarea
 				var labelText = document.createElement('label');
 					labelText.setAttribute('id', 'campoArea');//id
@@ -147,4 +150,58 @@ if(textValue === ''){
 		});
 
 }
+
+/****CAMBIO DE COLORES****************************************/
+	
+/*verde*/
+var green = document.getElementsByClassName('verde')[0];
+green.addEventListener('click', function(){
+ 	document.getElementsByClassName('containerHeader')[0].style.backgroundColor = ' #00b300';
+	document.getElementsByTagName('nav')[0].style.backgroundColor = '#00cc00';
+	document.getElementsByTagName('body')[0].style.backgroundColor = '#1aff1a';
+});
+
+/*purple*/
+var purple = document.getElementsByClassName('purple')[0];
+purple.addEventListener('click', function(){
+	document.getElementsByClassName('containerHeader')[0].style.backgroundColor = '#cc0099';
+	document.getElementsByTagName('nav')[0].style.backgroundColor = '#ff00bf';
+	document.getElementsByTagName('body')[0].style.backgroundColor = '#ff66d9';
+	
+});
+
+/*amarillo*/
+var yellow = document.getElementsByClassName('amarillo')[0];
+yellow.addEventListener('click', function(){
+	document.getElementsByClassName('containerHeader')[0].style.backgroundColor = '#ffb900';
+	document.getElementsByTagName('nav')[0].style.backgroundColor = '#ffd633';
+	document.getElementsByTagName('body')[0].style.backgroundColor = '#ffe066';
+	
+});
+
+/*rojo*/
+var red = document.getElementsByClassName('rojo')[0];
+red.addEventListener('click', function(){
+	document.getElementsByClassName('containerHeader')[0].style.backgroundColor = '#e60000';
+	document.getElementsByTagName('nav')[0].style.backgroundColor = '#ff3333';
+	document.getElementsByTagName('body')[0].style.backgroundColor = '#ff6666';
+	
+});
+
+/*azul*/
+var azul = document.getElementsByClassName('azul')[0];
+azul.addEventListener('click', function(){
+	document.getElementsByClassName('containerHeader')[0].style.backgroundColor = '#026AA7';
+	document.getElementsByTagName('nav')[0].style.backgroundColor = '#0291e3';
+	document.getElementsByTagName('body')[0].style.backgroundColor = '#35b4fd';
+	
+});
+
+
+
+
+
+
+
+
 
